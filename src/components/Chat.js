@@ -4,7 +4,6 @@ import * as io from 'socket.io-client';
 import './Chat.css';
 
 // 7. Przepisuje wszystko co bylo oparte na this.state i this.handleAction na propsy
-
 class Chat extends Component {
     socketConnection = null;
 
@@ -59,8 +58,6 @@ class Chat extends Component {
                                 <input type="text" ref={input => this.message = input} />
                                 <button type="submit">Wyślij</button>
                             </form>
-                            {/* <button onClick={this.handleSend}>Wyślij</button> */}
-
                         </div>
                     </footer>
                 </section>
@@ -70,8 +67,4 @@ class Chat extends Component {
         )
     }
 }
-
-
-// Podpinamy store do komponentu
-
 export default Chat;

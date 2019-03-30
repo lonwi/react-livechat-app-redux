@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import Chat from './components/Chat';
+
 // 1. Import niezbednych elementow
 import { createStore } from 'redux'; // dostepne wszedzie
 import { connect, Provider } from 'react-redux';  // dostepne w react
@@ -37,7 +38,6 @@ const store = createStore(
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 
-
 // 5. Wybieramy wlasciwosci ze stanu zeby podpiac je do komponentu
 const mapStateToProps = state => {
     return {
@@ -47,7 +47,6 @@ const mapStateToProps = state => {
     }
 }
 
-
 // 6. Wybieramy akcje z ktorych bedzie chcial korzystac komponent
 const mapDispatchToProps = dispatch => {
     return {
@@ -55,14 +54,14 @@ const mapDispatchToProps = dispatch => {
         closeChat: () => dispatch({ type: 'CLOSE_CHAT' }),
         addMessage: (message) => dispatch({ type: 'ADD_MESSAGE', payload: message }),
     }
-}
 
-const ConnectedApp = connect(mapStateToProps, mapDispatchToProps)(Chat);
+}
+// Podpinamy store do komponentu
+const ConnectedChat = connect(mapStateToProps, mapDispatchToProps)(Chat);
 
 ReactDOM.render(
     <Provider store={store}>
-        <ConnectedApp />
+        <ConnectedChat />
     </Provider>,
     document.getElementById('root')
 );
-// ReactDOM.render(<Chat />, document.getElementById('root'));
