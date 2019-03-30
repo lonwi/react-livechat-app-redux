@@ -1,0 +1,117 @@
+.Chat {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    border-radius: 5px;
+    min-width: 280px;
+    width: 30vw;
+    overflow: hidden;
+    opacity: 0;
+    display: none;
+    
+}
+.Chat--show {
+    display: block;
+    z-index: 2;
+}
+.Chat--hide {
+    z-index: 1;
+}
+.Chat-header {
+    background: darkcyan;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    position: relative;
+}
+.Chat-header h1 {
+    margin: 0;
+    padding: 0;
+}
+.Chat-header button {
+    background: none;
+    border:none;
+    color: #fff;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    padding: 0.5rem 1rem;
+    font-size: 2rem;
+    line-height: 1rem;
+}
+.Chat-main {
+    background: mediumturquoise;
+    color: #fff;
+    height: 50vh;
+    overflow-y: scroll;
+}
+.Chat-messages {
+    list-style: none;
+    padding: 0.5rem 1rem;
+}
+.Chat-message {
+    display: block;
+    background: darkcyan;
+    color: #fff;
+    padding: 0.5rem;
+    border-radius: 5px;
+    font-size: 0.85rem;
+    margin-bottom: 0.5rem;
+}
+.Chat-message--author {
+    font-size: 0.6rem;
+    font-style: italic;
+    font-weight: 700;
+}
+.Chat-message--time {
+    font-weight: 400;
+}
+.Chat-footer {
+    background: darkcyan;
+    padding: 0.5rem;
+    font-size: 0.85rem;
+}
+.Chat-footer-inner {
+    position: relative;
+}
+.Chat-footer input {
+    background: #fff;
+    border: none;
+    outline: none;
+    padding: 0.5rem 1rem;
+    width: 80%;
+}
+.Chat-footer button {
+    background: mediumturquoise;
+    border: none;
+    color: #fff;
+    outline: none;
+    width: 20%;
+    padding: 0.5rem 1rem;
+}
+.Chat-fab {
+    background: darkcyan;
+    border:3px solid mediumturquoise;
+    color: #fff;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    font-size: 2rem;
+    line-height: 1rem;
+    z-index: 1;
+    opacity: 0;
+}
+.Chat-fab--show {
+    z-index: 2;
+}
+.Chat-fab--hide {
+    z-index: 1;
+}
+button {
+    border: none;
+    outline:none;
+}
+button:focus {outline:0;}
