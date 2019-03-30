@@ -3,6 +3,9 @@ import moment from 'moment';
 import * as io from 'socket.io-client';
 import './Chat.css';
 
+import { createStore } from 'redux'; // dostepne wszedzie
+import { connect, provider } from 'react-redux';  // dostepne w react
+
 class Chat extends Component {
 
     socketConnection = null;
@@ -20,7 +23,7 @@ class Chat extends Component {
     }
 
     handleActions = (action) => {
-        switch(action.type){
+        switch (action.type) {
             case 'ADD_MESSAGE':
                 this.setState({ messages: [...this.state.messages, action.payload] });
                 break;
@@ -30,7 +33,7 @@ class Chat extends Component {
             case 'CLOSE_CHAT':
                 this.setState({ show: false });
                 break;
-                
+
             default: break;
         }
     }
@@ -67,9 +70,9 @@ class Chat extends Component {
     }
 
     timeAgo = (timestamp) => {
-        return ( 
+        return (
             <span className="Chat-message--time">
-            {moment(timestamp).fromNow()}
+                {moment(timestamp).fromNow()}
             </span>
         );
     }
